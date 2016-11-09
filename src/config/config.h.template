@@ -2,5 +2,9 @@
 COPY THIS FILE TO config.h AND CHANGE THE VALUES
 TO MATCH YOUR SETUP
 */
+// Wi-Fi settings
 const char* WIFI_SSID = "MySSID";
 const char* WIFI_PASS = "MyPassword";
+
+// Car settings
+const char* CAR_ID = "GREEN";

@@ -11,6 +11,14 @@ void wifiConnect() {
   WiFi.disconnect();
   delay(100);
 
+  // Set hostname
+  char hostname[50];
+  sprintf(hostname, "CAR_%s", CAR_ID);
+  Serial.print("Setting hostname to: ");
+  Serial.print(hostname);
+  Serial.println();
+  WiFi.hostname(hostname);
+
   // Connect to Wi-Fi using config
   Serial.print("Trying to connect to SSID: ");
   Serial.print(WIFI_SSID);
@@ -22,8 +30,9 @@ void wifiConnect() {
     Serial.print(".");
   }
 
-  Serial.println("");
+  // Print connection status
+  Serial.println();
   Serial.println("WiFi connected");
-  Serial.println("IP address: ");
+  Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
 }
