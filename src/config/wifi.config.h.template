@@ -1,0 +1,10 @@
+#ifndef CONFIG_WIFI_H
+#define CONFIG_WIFI_H
+
+// Wi-Fi settings
+const char* WIFI_SSID = "MySSID";
+const char* WIFI_PASS = "MyPassword";
+
+const char* WIFI_HOSTNAME = "MyHostname";
+
+#endif

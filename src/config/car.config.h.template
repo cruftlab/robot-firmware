@@ -1,0 +1,7 @@
+#ifndef CONFIG_CAR_H
+#define CONFIG_CAR_H
+
+// Car settings
+const char* CAR_ID = "GREEN";
+
+#endif

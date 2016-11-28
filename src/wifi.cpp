@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
-#include "config/config.h"
+#include "config/wifi.config.h"
 
 // Connect to Wi-Fi from config
 void wifiConnect() {
@@ -13,7 +13,7 @@ void wifiConnect() {
 
   // Set hostname
   char hostname[50];
-  sprintf(hostname, "CAR_%s", CAR_ID);
+  sprintf(hostname, "CAR_%s", WIFI_HOSTNAME);
   Serial.print("Setting hostname to: ");
   Serial.print(hostname);
   Serial.println();
