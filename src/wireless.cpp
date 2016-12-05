@@ -1,9 +1,8 @@
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
-#include "config/wifi.config.h"
+#include "wireless.h"
 
-// Connect to Wi-Fi from config
-void wifiConnect() {
+void Wireless::connect() {
 
   // Set WiFi to station mode and disconnect from an AP if it was previously connected
   Serial.println("Resetting Wi-Fi");
@@ -12,17 +11,15 @@ void wifiConnect() {
   delay(100);
 
   // Set hostname
-  char hostname[50];
-  sprintf(hostname, "CAR_%s", WIFI_HOSTNAME);
   Serial.print("Setting hostname to: ");
-  Serial.print(hostname);
+  Serial.print(this->hostname);
   Serial.println();
-  WiFi.hostname(hostname);
+  WiFi.hostname(this->hostname);
 
   // Connect to Wi-Fi using config
   Serial.print("Trying to connect to SSID: ");
-  Serial.print(WIFI_SSID);
-  WiFi.begin(WIFI_SSID, WIFI_PASS);
+  Serial.print(this->ssid);
+  WiFi.begin(this->ssid, this->pass);
 
   // Wait until connected
   while (WiFi.status() != WL_CONNECTED) {
